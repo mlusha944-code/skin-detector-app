@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Detector</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">AI-powered analysis</p>
+          <h1>Skin Detector</h1>
+        </div>
+      </header>
+
+      <main class="app-shell">
+        <section class="panel upload-panel">
+          <h2>Upload or capture an image</h2>
+          <div class="controls">
+            <label class="button primary" for="imageInput">Choose image</label>
+            <input id="imageInput" type="file" accept="image/*" capture="environment" />
+          </div>
+          <p class="hint">Tip: use a clear, front-facing photo with natural lighting for best results.</p>
+        </section>
+
+        <section class="panel preview-panel">
+          <canvas id="previewCanvas" width="640" height="480"></canvas>
+          <div class="mask-toggle">
+            <label>
+              <input id="showMask" type="checkbox" checked />
+              Show detected skin mask
+            </label>
+          </div>
+        </section>
+
+        <section class="panel results-panel">
+          <h2>Analysis</h2>
+
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="label">Skin coverage</span>
+              <strong id="skinCoverage">0%</strong>
+            </div>
+            <div class="stat-card">
+              <span class="label">Detected skin pixels</span>
+              <strong id="skinPixels">0</strong>
+            </div>
+            <div class="stat-card tone-card">
+              <span class="label">Dominant tone</span>
+              <div class="tone-row">
+                <span id="toneColor" class="tone-swatch"></span>
+                <strong id="dominantTone">N/A</strong>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="label">Skin type estimate</span>
+              <strong id="skinType">Undetermined</strong>
+            </div>
+          </div>
+
+          <div class="summary-box">
+            <h3>Insight</h3>
+            <p id="insightText">Upload a photo to begin.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
