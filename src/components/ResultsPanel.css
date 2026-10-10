@@ -1,0 +1,121 @@
+.results-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.results-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.mask-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(31, 41, 55, 0.5);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mask-toggle:hover {
+  background: rgba(31, 41, 55, 0.8);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.empty-state,
+.error-box {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  background: rgba(31, 41, 55, 0.5);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  margin-top: 12px;
+}
+
+.error-box {
+  color: var(--error);
+  background: rgba(248, 113, 113, 0.1);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.summary-box,
+.details-box {
+  background: rgba(31, 41, 55, 0.5);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.summary-box:last-child,
+.details-box:last-child {
+  margin-bottom: 0;
+}
+
+.summary-box h3,
+.details-box h3 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.summary-box p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.color-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.color-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.color-item:last-child {
+  border-bottom: none;
+}
+
+.color-item span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.color-item code {
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: rgba(15, 23, 42, 0.5);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
